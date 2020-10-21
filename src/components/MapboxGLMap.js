@@ -41,12 +41,24 @@ const MapboxGLMap = () => {
   }, [map]);
 
   const panToTrondheim = () => {
+    map.flyTo({
+      center: [10.408,63.53],
+      essential: true
+    });
     console.log("Trondheim");
+  }
+
+  const panToLillehammer = () => {
+    map.flyTo({
+      center: [10.27,61.06],
+      essential: true
+    });
+    console.log("Lillehammer");
   }
 
   const panToSandvika = () => {
     map.flyTo({
-      center: [11,61],
+      center: [10.31,59.53],
       essential: true
     });
     console.log("Sandvika");
@@ -69,6 +81,14 @@ const MapboxGLMap = () => {
         value = "Trondheim"
         defaultChecked = "checked"
         onClick = {panToTrondheim}
+        />
+        <input
+        id = "dark-v10"
+        type = "button"
+        name = "rtoggle"
+        value = "Lillehammer"
+        defaultChecked = "checked"
+        onClick = {panToLillehammer}
         />
       <div ref={(el) => (mapContainer.current = el)} style={styles} />
     </div>
