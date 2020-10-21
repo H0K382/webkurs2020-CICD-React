@@ -67,7 +67,6 @@ const MapboxGLMap = () => {
   return (
     <div>
       <input
-        id = "streets-v11"
         type = "button"
         name = "rtoggle"
         value = "Sandvika"
@@ -75,7 +74,6 @@ const MapboxGLMap = () => {
         onClick = {panToSandvika}
         />
         <input
-        id = "dark-v10"
         type = "button"
         name = "rtoggle"
         value = "Trondheim"
@@ -83,7 +81,6 @@ const MapboxGLMap = () => {
         onClick = {panToTrondheim}
         />
         <input
-        id = "dark-v10"
         type = "button"
         name = "rtoggle"
         value = "Lillehammer"
