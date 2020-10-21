@@ -19,7 +19,7 @@ const MapboxGLMap = () => {
         container: mapContainer.current,
         style: "mapbox://styles/mapbox/dark-v10", // stylesheet location
         center: [10.408773,63.422091],
-        zoom: 50
+        zoom: 10
       });
 
       map.on("load", () => {
