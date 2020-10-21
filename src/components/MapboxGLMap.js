@@ -8,6 +8,15 @@ const styles = {
   position: "absolute"
 };
 
+const menuStyle = {
+  width: "100%",
+  height: "calc(100vh - 80px)",
+  position: "absolute",
+  background: "white",
+  zIndex: 1,
+  padding: 10,
+};
+
 const MapboxGLMap = () => {
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
@@ -31,7 +40,39 @@ const MapboxGLMap = () => {
     if (!map) initializeMap({ setMap, mapContainer });
   }, [map]);
 
-  return <div ref={el => (mapContainer.current = el)} style={styles} />;
+  const panToTrondheim = () => {
+    console.log("Trondheim");
+  }
+
+  const panToSandvika = () => {
+    map.flyTo({
+      center: [11,61],
+      essential: true
+    });
+    console.log("Sandvika");
+  }
+
+  return (
+    <div>
+      <input
+        id = "streets-v11"
+        type = "button"
+        name = "rtoggle"
+        value = "Sandvika"
+        defaultChecked = "checked"
+        onClick = {panToSandvika}
+        />
+        <input
+        id = "dark-v10"
+        type = "button"
+        name = "rtoggle"
+        value = "Trondheim"
+        defaultChecked = "checked"
+        onClick = {panToTrondheim}
+        />
+      <div ref={(el) => (mapContainer.current = el)} style={styles} />
+    </div>
+    ); 
 };
 
 export default MapboxGLMap;
