@@ -28,7 +28,7 @@ const MapboxGLMap = () => {
         container: mapContainer.current,
         style: "mapbox://styles/mapbox/dark-v10", // stylesheet location
         center: [10.408773,63.422091],
-        zoom: 10
+        zoom: 15
       });
 
       map.on("load", () => {
@@ -42,7 +42,7 @@ const MapboxGLMap = () => {
 
   const panToTrondheim = () => {
     map.flyTo({
-      center: [10.408,63.53],
+      center: [10.40298522,63.44119009],
       essential: true
     });
     console.log("Trondheim");
@@ -50,7 +50,7 @@ const MapboxGLMap = () => {
 
   const panToLillehammer = () => {
     map.flyTo({
-      center: [10.27,61.06],
+      center: [10.45927405,61.12468232],
       essential: true
     });
     console.log("Lillehammer");
@@ -58,7 +58,7 @@ const MapboxGLMap = () => {
 
   const panToSandvika = () => {
     map.flyTo({
-      center: [10.31,59.53],
+      center: [10.5232662,59.89156341],
       essential: true
     });
     console.log("Sandvika");
